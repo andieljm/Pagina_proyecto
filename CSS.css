@@ -1,0 +1,227 @@
+/* General */
+
+:root {
+    --blanco: #ffffff;
+    --gris: #757575;
+    --gris_claro: #dfe9f3;
+    --negro: #212121;
+    --primary: #2769a290;
+    --secundary: #4ea700;
+    --tertiary: #e15b32;
+    --azul: #0b2842;
+    --verdec: #1c3209;
+}
+
+html {
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0px;
+    background-image: linear-gradient(var(--blanco), var(--gris_claro));
+}
+
+.contenedor {
+    width: 1200px;
+    margin: auto;
+}
+
+.boton {
+    color: var(--blanco);
+    background-color: var(--secundary);
+    font-size: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+.text-primary{
+    color: var(--primary);
+    font-weight: bold;
+}
+
+
+.text-tertiary{
+    color: var(--tertiary);
+    font-weight: bold;
+}
+
+.text-tertiary2{
+    color: var(--tertiary2);
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 38px;
+    text-align: center;
+    color: var(--primary);
+}
+
+
+/* Navegacion */
+
+.nav_bg {
+    background-color: var(--azul);
+}
+
+.nav_principal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_principal a {
+    color: var(--secundary);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav_principal a:hover {
+    color: var(--blanco);
+    background-color: var(--primary);
+}
+
+
+.contenido {
+    background-color: var(--blanco);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.5);
+}
+
+.contenido2 {
+    background-color: var(--blanco);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.5);
+}
+
+
+/* Formulario */
+
+.form {
+    background-color: var(--primary);
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form legend {
+    color: var(--blanco);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.form_campo {
+    margin-bottom: 20px;
+}
+
+.form_campo label {
+    color: var(--blanco);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form_text {
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.form_campo textarea {
+    height: 150px;
+}
+
+.form2 {
+    background-color: var(--azul);
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+}
+.form2 legend {
+    color: var(--blanco);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+
+::placeholder {
+    font-family: 'Nunito', sans-serif;
+}
+
+.enviar {
+    border: none;
+}
+
+.enviar :hover {
+    cursor: pointer;
+    background-color: var(--verdec);
+}
+
+/* Fin Formulario */
+
+/* Footer  */
+
+.informacion_contacto {
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.informacion_contacto img {
+    width: 9%;
+    padding: 4px;
+}
+
+.informacion_contacto p {
+    color: var(--secundary);
+    font-weight: 700;
+}
+
+.redes_sociales {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.info_contacto p {
+    text-align: center;
+}
+
+.derechos {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Fin Footer  */
+
+.seleccionado {
+    border: dashed var(--secundary) 2px;
+}
+
+/* login */
+
+.login {
+    height: 100%;
+}
+

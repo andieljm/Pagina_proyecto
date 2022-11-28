@@ -21,7 +21,7 @@ foreign key fk_usuario_rol (id_rol) references rol(id_rol)
 ) engine=InnoDB;
 
 INSERT INTO usuarios (id_rol,usuario,clave) VALUES ('1', 'admin', 'admin');
-INSERT INTO usuarios (id_rol,usuario,clave) VALUES ('1', 'user', 'user');
+INSERT INTO usuarios (id_rol,usuario,clave) VALUES ('2', 'user', 'user');
 
 create table ventas (
 codigov int not null auto_increment,

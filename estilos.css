@@ -1,0 +1,109 @@
+/* menu */
+
+body {
+    font-family: 'Overpass', sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    color: #1b262c;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    background-color: #abcdea;
+}
+
+.intro {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #2471a3;
+
+}
+
+.info {
+
+    display: inline-block;
+
+}
+
+.info p {
+
+    margin-left: -15%;
+}
+
+
+.boton {
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+
+
+/* footer */
+
+.footer {
+    margin: auto;
+    background-color: #2471a3;
+    height: 100%;
+    line-height: 50px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.informacion_contacto {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.informacion_contacto img {
+    width: 9%;
+    padding: 4px;
+}
+
+.informacion_contacto p {
+    font-weight: 700;
+}
+
+
+.info_contacto p {
+    text-align: center;
+}
+
+.derechos {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* botones de opciones */
+
+.boton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.boton div {
+    padding-bottom:40px;
+    width: 250px;
+    height: 100px;
+    margin-top: 50px;
+}
+
+.botontexto{
+    text-decoration: none;
+    
+}
+
+.fcc-btn {
+    background-color: #199319;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+  }
+  
+  .fcc-btn:hover {
+    background-color: #223094;
+  }

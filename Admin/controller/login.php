@@ -28,7 +28,11 @@ if (!$usuario) {
 }
 
 if ($usuario->validarClave($_POST["contrasena"])) {
-    header("location: ../pages/admin.php");
+    session_start();
+    $_SESSION["login"] = true;
+    $_SESSION["usuario"] = $usuario->getUsuario();
+    $_SESSION["id"] = $usuario->getid_usuario();
+    header("location: ../pages/Menu.php");
     exit();
 } else {
     header("location: ../pages/index.php?error=3");

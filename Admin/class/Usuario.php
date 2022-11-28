@@ -4,19 +4,21 @@ include "Conexion.php";
 class Usuario
 {
     // Atributos
-    protected $codigo;
+    protected $id_usuario;
+    protected $id_rol;
     protected $usuario;
     protected $clave;
 
-    public function __construct($codigo, $usuario, $clave)
+    public function __construct($id_usuario, $id_rol , $usuario, $clave)
     {
-        $this->codigo = $codigo;
+        $this->id_usuario = $id_usuario;
+        $this->id_rol = $id_rol;
         $this->usuario = $usuario;
         $this->clave = $clave;
     }
 
     // Metodos
-    public static function getByUserName($user_name) // Carlos777
+    public static function getByUserName($user_name) // nombre de usuario
     {
         $conexion = new Conexion();
         $conexion->conectar();
@@ -34,12 +36,12 @@ class Usuario
         $prepare->execute();
 
         $respuesta = $prepare->get_result();
-        $dataArray = $respuesta->fetch_row(); // [1, "Carlos777", "777"]
+        $dataArray = $respuesta->fetch_row(); // [1, "admin", "admin"]
 
         $conexion->cerrar();
 
         if (!empty($dataArray)) {
-            return new Usuario($dataArray[0], $dataArray[1], $dataArray[2]);
+            return new Usuario($dataArray[0], $dataArray[1], $dataArray[2], $dataArray[3]);
         }
 
         return false;
@@ -61,9 +63,9 @@ class Usuario
         return $this->usuario;
     }
 
-    public function getCodigo(): int
+    public function getid_usuario(): int
     {
-        return $this->codigo;
+        return $this->id_usuario;
     }
 
 }

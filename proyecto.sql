@@ -25,10 +25,16 @@ INSERT INTO usuarios (id_rol,usuario,clave) VALUES ('2', 'user', 'user');
 
 create table ventas (
 codigov int not null auto_increment,
-nombre varchar(50) not null,
-precio double(10,4) not null,
-descricion varchar(55) not null,
-img longblob not null,
-primary key(codigov)
+id_usuario int,
+nombre varchar(50) ,
+precio double(10,4) ,
+descripcion varchar(55) ,
+img varchar(150),
+primary key(codigov),
+foreign key fk_usuario_id (id_usuario) references usuarios(id_rol) 
 )engine=InnoDB;
 
+insert into ventas (id_usuario,nombre,precio,descripcion,img) values ('2','camisa','5000','usada talla S','camisa.jpg');
+insert into ventas (id_usuario,nombre,precio,descripcion,img) values ('2','jeans','7000','usada talla S','camisa.jpg');
+
+select nombre,precio,descripcion,img from ventas;

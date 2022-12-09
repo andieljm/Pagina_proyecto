@@ -36,7 +36,7 @@ class Usuario
         $prepare->execute();
 
         $respuesta = $prepare->get_result();
-        $dataArray = $respuesta->fetch_row(); // [1, "admin", "admin"]
+        $dataArray = $respuesta->fetch_row(); // [1, "admin", "admin",rol]
 
         $conexion->cerrar();
 
@@ -66,6 +66,11 @@ class Usuario
     public function getid_usuario(): int
     {
         return $this->id_usuario;
+    }
+
+    public function getID_rol(): int
+    {
+        return $this->id_rol;
     }
 
 }

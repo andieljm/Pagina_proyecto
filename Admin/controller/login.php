@@ -26,12 +26,13 @@ if (!$usuario) {
     header("location: ../pages/index.php?error=3");
     exit();
 }
-
+ 
 if ($usuario->validarClave($_POST["contrasena"])) {
     session_start();
     $_SESSION["login"] = true;
     $_SESSION["usuario"] = $usuario->getUsuario();
     $_SESSION["id"] = $usuario->getid_usuario();
+    $_SESSION["rol"] = $usuario->getID_rol();
     header("location: ../pages/Menu.php");
     exit();
 } else {

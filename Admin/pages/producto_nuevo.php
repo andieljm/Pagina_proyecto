@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../menu.css">
+    <link rel="stylesheet" href="../../formulario.css">
     <title>Nuevas ventas</title>
     <?php
     session_start();
@@ -29,81 +30,37 @@
                     <img src="../../imgs/logo.png" alt="logo" class="logo-img">
                 </a>
 
+
             </header>
             <!---FIN DEL HEADER-->
 
             <nav>
-                <a href="producto_nuevo.php">Vender producto</a>
-                <a href="misventas.php">Mis ventas</a>
                 <a href="Menu.php">Productos</a>
-                <?php 
-        
-        if (isset($_GET["codigo"])) {
-            if ($_GET["codigo"] == "1") { // CREADO
-                echo "<p class='producto-nombre'>producto creado con exito.</p>";
-            }
-            if ($_GET["codigo"] == "4") { // ERROR
-                echo "<p class='producto-nombre'>" . $_GET["error"] . "</p>";
-            }
-        }
-        
-        ?>
+                <a href="misventas.php">Mis ventas</a>
             </nav>
 
 
             <!--ESTE ES EL INICIO DEL CONTENIDO PRINCIPAL-->
             <main class="contenedor">
-                <h1 class="nustros-productos">Productos</h1>
+                <h1 class="nustros-productos">Nueva venta</h1>
 
                 <!--INICIO PRODUCTOS-->
-                <div class="productos">
-                    <?php $productos = Producto::getAll(); ?>
-                    <?php if (empty($productos)) {  ?>
-                        <div>
-                            <p class="producto-nombre">No hay productos en el sistema.</p>
-                        </div>
-                    <?php } else { ?>
-                        <!---INICIO PRODUCTOS-->
-                        <?php
-                        foreach ($productos as $producto) {
-                            echo "<div class='producto'>";
 
-                            echo "<div class='producto-blanco'>";
-                            echo "<img src= ../../imgs/" . $producto->getImg() . " alt=".$producto->getImg().">";
-
-                           echo "</div>";
-
-                            echo "<div class='producto-informacion'>";
-
-                           echo "<p class='producto-nombre'>" . $producto->getNombre() . "</p>";
-                           echo "<p class='producto-nombre'>" . $producto->getDescripcion() . "</p>";
-
-                           echo "<p class='producto-precio'>"."₡".$producto->getPrecio()."</p>";
-                           echo "<p class='producto-precio'>Comprar</p>";
-                           if ($_SESSION["rol"] == 1) {
-
-                            echo "<form  action='../controller/producto.php' method='post'>";
-
-                            echo "<input type='hidden' name='eli' id='eli' >".$producto->getIDventa()."</input>";
-
-                            echo "<input type='submit' value='Eliminar' />";
-
-                            echo "</form>";
-
-                        }
-
-                           echo "</div>";
-
-                           echo "</div>";
-                        } ?>
-
-                    <?php } ?>
-
-                    
-                </div>
-
-
-
+                <div class="form-style-5">
+<form action="../controller/producto.php" method="post" enctype="multipart/form-data">
+<fieldset>
+<legend><span class="number">1</span> informacion de venta</legend>
+<input type="text" id="nombre" name="nombre" placeholder="Nombre de producto *">
+<input type="number" id="precio" name="precio" placeholder="Precio *">
+<textarea id="descripcion" name="descripcion" placeholder="Descripcion"></textarea>    
+</fieldset>
+<fieldset>
+<legend><span class="number">2</span>Imagen opcional</legend>
+<input type="file" id="img" name="img" ></input>
+</fieldset>
+<input type="submit" value="Vender" />
+</form>
+</div>
 
             </main>
             <!--FIN DEL CONTENIDO PRINCIPAL-->

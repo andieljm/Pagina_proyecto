@@ -22,6 +22,7 @@ foreign key fk_usuario_rol (id_rol) references rol(id_rol)
 
 INSERT INTO usuarios (id_rol,usuario,clave) VALUES ('1', 'admin', 'admin');
 INSERT INTO usuarios (id_rol,usuario,clave) VALUES ('2', 'user', 'user');
+INSERT INTO usuarios (id_rol,usuario,clave) VALUES ('2', 'peter', '123');
 
 create table ventas (
 codigov int not null auto_increment,
@@ -31,10 +32,10 @@ precio double(10,4) ,
 descripcion varchar(55) ,
 img varchar(150),
 primary key(codigov),
-foreign key fk_usuario_id (id_usuario) references usuarios(id_rol) 
+foreign key fk_usuario_id (id_usuario) references usuarios(id_usuario) 
 )engine=InnoDB;
 
 insert into ventas (id_usuario,nombre,precio,descripcion,img) values ('2','camisa','5000','usada talla S','camisa.jpg');
-insert into ventas (id_usuario,nombre,precio,descripcion,img) values ('2','jeans','7000','usada talla S','camisa.jpg');
+insert into ventas (id_usuario,nombre,precio,descripcion,img) values ('2','jeans','7000','usada talla S','jeans.jpg');
 
 select nombre,precio,descripcion,img from ventas;

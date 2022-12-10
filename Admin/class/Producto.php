@@ -20,14 +20,20 @@ class Producto extends Conexion
         $this->img = $img;
     }
 
+    public function __construct1($idventa)
+    {   
+        $this->idventa = $idventa;
+
+    }
+
     // METODOS (CRUD => CREATE, READ, UPDATE, DELETE)
 
     public function create()
     {
         $this->conectar();
 
-        $query = "INSERT INTO productos(usuario, nombre, precio, descripcion, img)" .
-            "VALUES(?, ?, ?, ?, ?)";
+        $query = "INSERT INTO ventas(codigov, id_usuario, nombre, precio, descripcion, img)" .
+            "VALUES(?, ?, ?, ?, ?, ?)";
 
         $prepare = mysqli_prepare($this->link, $query);
 
@@ -37,11 +43,40 @@ class Producto extends Conexion
         // b => binarios
 
         $prepare->bind_param(
-            "siss",
+            "iisiss",
+            $this->idventa,
+            $this->usuario,
             $this->nombre,
             $this->precio,
             $this->descripcion,
             $this->img,
+        );
+
+        if ($prepare->execute()) {
+            $this->cerrar();
+            return "OK";
+        } else {
+            $this->cerrar();
+            return "Error: " . $prepare->error;
+        }
+    }
+
+    public function delete()
+    {
+        $this->conectar();
+
+        $query = "DELETE FROM ventas WHERE codigov = ?;";
+
+        $prepare = mysqli_prepare($this->link, $query);
+
+        // s => cadenas de texto
+        // d => doble
+        // i => entero
+        // b => binarios
+
+        $prepare->bind_param(
+            "i",
+            $this->idventa
         );
 
         if ($prepare->execute()) {
@@ -83,7 +118,7 @@ class Producto extends Conexion
     // METODOS GET Y SET
 
 
-    public function getIDventa(): string
+    public function getIDventa(): int
     {
         return $this->idventa;
     }

@@ -29,6 +29,7 @@
                     <img src="../../imgs/logo.png" alt="logo" class="logo-img">
                 </a>
 
+
             </header>
             <!---FIN DEL HEADER-->
 
@@ -45,8 +46,7 @@
             if ($_GET["codigo"] == "4") { // ERROR
                 echo "<p class='producto-nombre'>" . $_GET["error"] . "</p>";
             }
-        }
-        
+        }        
         ?>
             </nav>
 
@@ -65,7 +65,9 @@
                     <?php } else { ?>
                         <!---INICIO PRODUCTOS-->
                         <?php
+                        
                         foreach ($productos as $producto) {
+                            if($_SESSION["id"] == $producto->getUsuario()){
                             echo "<div class='producto'>";
 
                             echo "<div class='producto-blanco'>";
@@ -80,21 +82,14 @@
 
                            echo "<p class='producto-precio'>"."₡".$producto->getPrecio()."</p>";
                            echo "<p class='producto-precio'>Comprar</p>";
-                           if ($_SESSION["rol"] == 1) {
+                            if ($_SESSION["rol"] == 1) {
+                                echo "<a href='#' class='producto-precio'>Eliminar</a>";
+                            }
 
-                            echo "<form  action='../controller/producto.php' method='post'>";
+                           echo "</div>";
 
-                            echo "<input type='hidden' name='eli' id='eli' >".$producto->getIDventa()."</input>";
-
-                            echo "<input type='submit' value='Eliminar' />";
-
-                            echo "</form>";
-
+                           echo "</div>";
                         }
-
-                           echo "</div>";
-
-                           echo "</div>";
                         } ?>
 
                     <?php } ?>

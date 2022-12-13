@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../login.css">
+    <link rel="stylesheet" href="../../login2.css">
     <title>Nuevas venta</title>
 </head>
-
+ 
 <body class="login">
     <div id="contenedor">
         <div id="central">
@@ -25,7 +25,7 @@
                 </form>
                 <div class="pie-form">
                     <a href="#">¿Perdiste tu contraseña?</a>
-                    <a href="#">¿No tienes Cuenta? Registrate?</a>
+                    <a href="../pages/registro.php">¿No tienes Cuenta? Registrate?</a>
                 </div>
             </div>
         </div>

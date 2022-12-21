@@ -25,9 +25,9 @@ class Producto extends Conexion
         $this->idventa = $idventa;
 
     }
-
+ 
     // METODOS (CRUD => CREATE, READ, UPDATE, DELETE)
-
+ 
     public function create()
     {
         $this->conectar();

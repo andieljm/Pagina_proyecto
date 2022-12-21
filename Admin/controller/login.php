@@ -39,3 +39,8 @@ if ($usuario->validarClave($_POST["contrasena"])) {
     header("location: ../pages/index.php?error=3");
     exit();
 }
+
+
+
+
+

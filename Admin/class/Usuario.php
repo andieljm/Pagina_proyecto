@@ -1,7 +1,7 @@
 <?php
 include "Conexion.php";
 
-class Usuario
+class Usuario extends Conexion
 {
     // Atributos
     protected $id_usuario;
@@ -17,6 +17,7 @@ class Usuario
         $this->clave = $clave;
     }
 
+   
     // Metodos
     public static function getByUserName($user_name) // nombre de usuario
     {

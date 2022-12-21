@@ -54,7 +54,7 @@
 <input type="number" id="precio" name="precio" placeholder="Precio *">
 <textarea id="descripcion" name="descripcion" placeholder="Descripcion"></textarea>    
 </fieldset>
-<fieldset>
+<fieldset> 
 <legend><span class="number">2</span>Imagen opcional</legend>
 <input type="file" id="img" name="img" ></input>
 </fieldset>

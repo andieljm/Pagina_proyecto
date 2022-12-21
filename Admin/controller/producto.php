@@ -11,7 +11,7 @@ $productosid = Producto::getAll();
 $contador = 0;
 foreach ($productosid as $productoid){
     $contador ++;
-
+ 
 }
 $contador ++;
 session_start();

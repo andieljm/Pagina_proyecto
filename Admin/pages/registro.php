@@ -14,15 +14,15 @@
 <div id="central">
 <div class="regis">
 	<h2 class="titulo">Registro de usuario</h2>
-    <form method="post">
-    	<input type="text" name="u" placeholder="Usuario" required="required" />
-        <input type="password" name="p" placeholder="Contraseña" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Registrarme</button>
+    <form  action="../controller/Nuser.php" method="post" >
+    	<input type="text" id="user" name="user" placeholder="Usuario" required="required" />
+        <input type="password" id="clav" name="clave" placeholder="Contraseña" required="required" />
+        <input type="submit" class="btn btn-primary btn-block btn-large" value="Registrarse" />
         <br><br>
         <a href="../pages/index.php" class="link">> Devuelta a la pagina Login <</a>
     </form>
 </div>
 </div>
 </div>
-
+ 
 </body>

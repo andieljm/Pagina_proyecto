@@ -25,7 +25,7 @@
                 </form>
                 <div class="pie-form">
                     <a href="#">¿Perdiste tu contraseña?</a>
-                    <a href="../pages/registro.php">¿No tienes Cuenta? Registrate?</a>
+                    <a href="../pages/registro.php">¿No tienes Cuenta? Regístrate?</a>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 echo "<p class='text-tertiary'>* Se requiere usuario y contraseña</p>";
                 break;
             case '3':
-                echo "<p class='text-tertiary'>* Credenciales invalidos</p>";
+                echo "<p class='text-tertiary'>* Credenciales inválidos</p>";
                 break;
         }
     }
